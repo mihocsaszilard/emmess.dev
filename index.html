@@ -1,22 +1,3 @@
-<?php 
-      if(isset($_POST['submit'])){
-          $to = "emmessdesign@gmail.com";
-          $from = $_POST['email']; // this is the sender's Email address
-          $name = $_POST['name'];
-          $subject = "Form submission from home page of emmess.dev";
-          $subject2 = "Copy of your form submission on emmess.dev";
-          $message = $name . " wrote the following:" . "\n\n" . $_POST['message'];
-          $message2 = "Here is a copy of your message " . $name . "\n\n" . $_POST['message'];
-      
-          $headers = "From:" . $from;
-          $headers2 = "From:" . $to;
-          mail($to,$subject,$message,$headers);
-          mail($from,$subject2,$message2,$headers2); // sends a copy of the message to the sender
-          echo "Mail Sent. Thank you " . $name . ", we will contact you shortly.";
-          // You can also use header('Location: thank_you.php'); to redirect to another page.
-          }
-      ?>
-
 <!doctype html>
 <html lang="en">
 
@@ -33,7 +14,7 @@
   <link rel="preload" as="image"
     imagesrcset="./assets/design-svgrepo-com_wCc2sNUKbi1JzKK2kxlsO.svg 16w, ./assets/design-svgrepo-com_wCc2sNUKbi1JzKK2kxlsO.svg 32w, ./assets/design-svgrepo-com_wCc2sNUKbi1JzKK2kxlsO.svg 48w, ./assets/design-svgrepo-com_wCc2sNUKbi1JzKK2kxlsO.svg 64w, ./assets/design-svgrepo-com_wCc2sNUKbi1JzKK2kxlsO.svg 96w, ./assets/design-svgrepo-com_wCc2sNUKbi1JzKK2kxlsO.svg 128w, ./assets/design-svgrepo-com_wCc2sNUKbi1JzKK2kxlsO.svg 256w, ./assets/design-svgrepo-com_wCc2sNUKbi1JzKK2kxlsO.svg 384w, ./assets/design-svgrepo-com_wCc2sNUKbi1JzKK2kxlsO.svg 640w, ./assets/design-svgrepo-com_wCc2sNUKbi1JzKK2kxlsO.svg 750w, ./assets/design-svgrepo-com_wCc2sNUKbi1JzKK2kxlsO.svg 828w, ./assets/design-svgrepo-com_wCc2sNUKbi1JzKK2kxlsO.svg 1080w, ./assets/design-svgrepo-com_wCc2sNUKbi1JzKK2kxlsO.svg 1200w, ./assets/design-svgrepo-com_wCc2sNUKbi1JzKK2kxlsO.svg 1920w"
     imagesizes="100vw" />
-  <meta property="og:url" content="https://url/" />
+  <meta property="og:url" content="https://www.emmess.dev/" />
   <title>Home</title>
   <meta property="og:title" content="Home" />
   <meta name="description"
@@ -53,10 +34,9 @@
   <meta property="keywords" content="webdesign, developer, freelancer, help, work, project, online presence, website" />
   <meta property="author" content="emmess" />
   <meta property="Content-Type" content="text/html; charset=utf-8" />
-  <link rel="icon" href="./assets/e_VWzciL6P9bU-xQ8cLhlNW.png" />
+  <link rel="icon" href="./assets/111.1-Client-file-Light-Icon-PNG_fIGR7tZKxprWPXMnrFW9O.png" />
   <link rel="preload" href="./assets/InstrumentSans-VariableFont_wdth_wght_o3etf9mcJeUAJ0jUkHwMF.ttf" as="font"
     crossorigin="anonymous" />
-  <link rel="preload" href="./assets/emmess100x100_fCGRkqXaPCzzfT0lOyLMT.jpg" as="image" />
   <link rel="preload" href="./assets/emmess-light_oHwsf40lX98aVXt3c0w05.png" as="image" />
   <link rel="preload" href="./assets/gb_0t4G1cOaF7j2LM7vAVi1C.svg" as="image" />
   <script type="application/ld+json">
@@ -64,7 +44,7 @@
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "emmess web developer",
-        "url": "https://url"
+        "url": "https://www.emmess.dev"
       }
     </script>
 </head>
@@ -728,26 +708,34 @@
       </div>
 
       <div class="w-box cfhwda7 c1qhqfas c1kylpxu">
-        <form action="" method="post" state="initial" class="w-form cdbrjt6 cxxtn2o cabekta c1v754yw">
+
+        <form action="https://api.web3forms.com/submit" method="post" state="initial"
+          class="w-form cdbrjt6 cxxtn2o cabekta c1v754yw">
+
+          <input type="hidden" name="apikey" value="9e981141-7fb1-404d-83c1-4ccedaec52b1">
+          <input type="hidden" name="subject" value="New Submission from home page">
+          <input type="hidden" name="from_name" value="emmess.dev">
+          <input type="hidden" name="redirect" value="https://www.emmess.dev">
+
           <div class="w-box cdbrjt6 cabekta c1v754yw cxxtn2o cmlbxme c1e2t8lu">
             <div class="w-box cmlbxme cxd9ghl">
-              <input placeholder="name" required=""
+              <input placeholder="name" required
                 class="w-text-input c1swgcny cy1nydl c1pggr7 ccw0luv crk8h2s cdfuaub cc3ck66 c1n3z5u0 cb7prkk cm6jgge c1bmvxdh cmlbxme c1li90jp cmqtlay c1s5rzwo c1q406iy c117vcti csl455m ccmnndv ci5jx9b c14c2xr0 cmg76fh c1oa6fvg chr9f5c c1pb337a c1voxtzt c7fwkib c93sz9b c12ystn4 cf56o25 cjf9v7b czaryot cl3mvaf c15p7vyx c1arh7c"
                 type="text" name="name" />
             </div>
             <div class="w-box cmlbxme cxd9ghl">
               <input placeholder="e-mail
-" required="" class="w-text-input c1swgcny cy1nydl c1pggr7 ccw0luv crk8h2s cdfuaub cc3ck66 c1n3z5u0 cb7prkk cm6jgge c1bmvxdh cmlbxme c1li90jp cmqtlay c1s5rzwo c1q406iy c117vcti csl455m ccmnndv ci5jx9b c14c2xr0 cmg76fh c1oa6fvg chr9f5c c1pb337a c1voxtzt c7fwkib c93sz9b c12ystn4 cf56o25 cjf9v7b czaryot cl3mvaf c15p7vyx c1arh7c"
-                type="text" name="email" />
+" required class="w-text-input c1swgcny cy1nydl c1pggr7 ccw0luv crk8h2s cdfuaub cc3ck66 c1n3z5u0 cb7prkk cm6jgge c1bmvxdh cmlbxme c1li90jp cmqtlay c1s5rzwo c1q406iy c117vcti csl455m ccmnndv ci5jx9b c14c2xr0 cmg76fh c1oa6fvg chr9f5c c1pb337a c1voxtzt c7fwkib c93sz9b c12ystn4 cf56o25 cjf9v7b czaryot cl3mvaf c15p7vyx c1arh7c"
+                type="email" name="email" id="sender" />
             </div>
             <div class="w-box cmlbxme cxd9ghl">
-              <textarea placeholder="message" name="message"
+              <textarea placeholder="message" name="message" required
                 class="w-text-area c1swgcny cy1nydl c1pggr7 ccw0luv crk8h2s cdfuaub c1y8osv7 c1n3z5u0 cb7prkk cm6jgge c1bmvxdh cmlbxme c1li90jp cmqtlay chg2uf2 c1s5rzwo c1q406iy c117vcti csl455m ccmnndv ci5jx9b c14c2xr0 cmg76fh c1oa6fvg chr9f5c c1pb337a c1voxtzt c7fwkib c93sz9b c12ystn4 cf56o25 cjf9v7b czaryot cl3mvaf c15p7vyx c1arh7c"></textarea>
             </div>
-            <input type="submit" name="submit"
+            <button type="submit" name="submit"
               class="w-button cpbts2t c1xz90o3 csi3kvf c1rcu2z c103rlt6 c1u3zjep c1li90jp c11kjtmf cy1nydl c1pggr7 ccw0luv crk8h2s c1ff3sbd c11pp6bd cxze075 cfkvtxm c6wxre cnlpu6l c12dtkkz c2fkex4 c1quqltk csy8cb8 c1js0vls c1rwbnys c152qlvy c1ymozjn c15ppwdl c3k70dx cqzs56e c1ldk7nd ci5jx9b cnmsy6 ch1ppcl cnga94e c15r4q1i c1qistx5 c12b1kyj cyxpt4q cl8se6q c1go0x90 c1je1uax">
-            <br />
-            </input>
+              Send
+            </button>
           </div>
         </form>
       </div>

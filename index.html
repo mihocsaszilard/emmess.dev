@@ -1,3 +1,22 @@
+<?php 
+      if(isset($_POST['submit'])){
+          $to = "emmessdesign@gmail.com";
+          $from = $_POST['email']; // this is the sender's Email address
+          $name = $_POST['name'];
+          $subject = "Form submission from home page of emmess.dev";
+          $subject2 = "Copy of your form submission on emmess.dev";
+          $message = $name . " wrote the following:" . "\n\n" . $_POST['message'];
+          $message2 = "Here is a copy of your message " . $name . "\n\n" . $_POST['message'];
+      
+          $headers = "From:" . $from;
+          $headers2 = "From:" . $to;
+          mail($to,$subject,$message,$headers);
+          mail($from,$subject2,$message2,$headers2); // sends a copy of the message to the sender
+          echo "Mail Sent. Thank you " . $name . ", we will contact you shortly.";
+          // You can also use header('Location: thank_you.php'); to redirect to another page.
+          }
+      ?>
+
 <!doctype html>
 <html lang="en">
 
@@ -232,28 +251,28 @@
           <style>
             @keyframes color-change {
               0% {
-                background-color: #23B58E;
-                opacity: 0.75
+                background-color: rgba(35, 181, 142, 0.2);
+                /* opacity: 0.33 */
               }
 
               25% {
-                background-color: #1c998a;
-                opacity: 0.66
+                background-color: rgba(28, 153, 138, 0.2);
+                /* opacity: 0.25 */
               }
 
               50% {
-                background-color: #23B58E;
-                opacity: 0.5
+                background-color: rgba(35, 181, 142, 0.2);
+                /* opacity: 0.15 */
               }
 
               75% {
-                background-color: #1c998a;
-                opacity: 0.66
+                background-color: rgba(28, 153, 138, 0.2);
+                /* opacity: 0.25 */
               }
 
               100% {
-                background-color: #23B58E;
-                opacity: 0.75
+                background-color: rgba(35, 181, 142, 0.2)
+                  /* opacity: 0.33 */
               }
             }
 
@@ -277,28 +296,27 @@
         </div>
         <div id="heroImage"
           class="w-box cd3zj28 csxcpnh ck5ncoe ckztlgk cvlod9e c3hphsm c1xnq7gs c9ke544 c9bcpmt c58z5p6 cd8kon4 c1rs3cao c1puyyrk cdkq03u cyac4n2 c2zogov c1pnt3h6 animate-bg">
-          <img alt="" width="494" height="505" src="./assets/me-nobg_Ec1MBNuwoyxqyLC0Nv80X.png"
+          <img alt="" width="494" height="505" src="./assets/111.1-Client-file-Light-Icon-PNG_fIGR7tZKxprWPXMnrFW9O.png"
             class="w-image c3c2gn6 c3hphsm c9bcpmt csxcpnh ck5ncoe ckztlgk cvlod9e canbhi8 cf1e2ma c15ppwdl cwkl700 hero-img"
             sizes="100vw" srcset="
-                ./assets/me-nobg_Ec1MBNuwoyxqyLC0Nv80X.png   16w,
-                ./assets/me-nobg_Ec1MBNuwoyxqyLC0Nv80X.png   32w,
-                ./assets/me-nobg_Ec1MBNuwoyxqyLC0Nv80X.png   48w,
-                ./assets/me-nobg_Ec1MBNuwoyxqyLC0Nv80X.png   64w,
-                ./assets/me-nobg_Ec1MBNuwoyxqyLC0Nv80X.png   96w,
-                ./assets/me-nobg_Ec1MBNuwoyxqyLC0Nv80X.png  128w,
-                ./assets/me-nobg_Ec1MBNuwoyxqyLC0Nv80X.png  256w,
-                ./assets/me-nobg_Ec1MBNuwoyxqyLC0Nv80X.png  384w,
-                ./assets/me-nobg_Ec1MBNuwoyxqyLC0Nv80X.png  640w,
-                ./assets/me-nobg_Ec1MBNuwoyxqyLC0Nv80X.png  750w,
-                ./assets/me-nobg_Ec1MBNuwoyxqyLC0Nv80X.png  828w,
-                ./assets/me-nobg_Ec1MBNuwoyxqyLC0Nv80X.png 1080w
+                ./assets/111.1-Client-file-Light-Icon-PNG_fIGR7tZKxprWPXMnrFW9O.png   16w,
+                ./assets/111.1-Client-file-Light-Icon-PNG_fIGR7tZKxprWPXMnrFW9O.png   32w,
+                ./assets/111.1-Client-file-Light-Icon-PNG_fIGR7tZKxprWPXMnrFW9O.png   48w,
+                ./assets/111.1-Client-file-Light-Icon-PNG_fIGR7tZKxprWPXMnrFW9O.png   64w,
+                ./assets/111.1-Client-file-Light-Icon-PNG_fIGR7tZKxprWPXMnrFW9O.png   96w,
+                ./assets/111.1-Client-file-Light-Icon-PNG_fIGR7tZKxprWPXMnrFW9O.png  128w,
+                ./assets/111.1-Client-file-Light-Icon-PNG_fIGR7tZKxprWPXMnrFW9O.png  256w,
+                ./assets/111.1-Client-file-Light-Icon-PNG_fIGR7tZKxprWPXMnrFW9O.png  384w,
+                ./assets/111.1-Client-file-Light-Icon-PNG_fIGR7tZKxprWPXMnrFW9O.png  640w,
+                ./assets/111.1-Client-file-Light-Icon-PNG_fIGR7tZKxprWPXMnrFW9O.png  750w,
+                ./assets/111.1-Client-file-Light-Icon-PNG_fIGR7tZKxprWPXMnrFW9O.png  828w,
+                ./assets/111.1-Client-file-Light-Icon-PNG_fIGR7tZKxprWPXMnrFW9O.png 1080w
               " decoding="async" loading="lazy" />
         </div>
         <div id="heroParagraph"
           class="w-box cca97ng cd3zj28 cyjfprp c8d5m6v clgn7ua c1t9c0jy c1j65dx6 c1jyw49c cekysgz c5q7bf0 c1gly636 cxhra0r c1aaxbub cylq12t cdxsbz3 c3ddbf3">
           <div class="w-box c1dt3jv2 cabekta ceime8w cxh1p48 ch6nbjg c1vb8r4t">
             <h1 class="w-heading cylt02x cpk9u0d ce5l0l1 c6wxre c19uwbza c1rw6hdj cumrtdq c1j65dx6 c189njoa c17zu8g6">
-              Hi, I&#x27;m
             </h1>
             <img alt="" width="402" height="105" src="./assets/emmess-light_oHwsf40lX98aVXt3c0w05.png" class="w-image"
               sizes="100vw" srcset="
@@ -316,26 +334,26 @@
                 " decoding="async" loading="lazy" />
           </div>
           <h1 class="w-heading cylt02x cpk9u0d ce5l0l1 c6wxre c19uwbza c1od7giq ct14uu0 cumrtdq c189njoa">
-            web developer
+            web development solutions
           </h1>
           <div
             class="w-text-1 cylt02x cmqtlay c103h0p2 c6wxre c19uwbza chav0kr cpbts2t c1xr1toy c1rw6hdj cumrtdq cn91zlk c1j65dx6">
-            <span class="w-text-1 c1rw6hdj">I specialize in creating stunning websites for small
+            <span class="w-text-1 c1rw6hdj">Specializing in creating stunning websites for small
               <span class="w-text c1k0wzi6">businesses </span>and
               <span class="w-text c1k0wzi6">professionals.</span> With a focus
               on
               <span class="w-text c1k0wzi6">simplicity and functionality,</span>
-              I bring your vision to life quickly and affordably. </span><a href="/projects#top"
+              bringing your vision to life quickly and affordably. </span><a href="/projects#top"
               class="w-link cylt02x cmqtlay ce5l0l1 c6wxre c19uwbza cy7ulgk csy8cb8 c2fkex4 c1quqltk canbhi8 c1uafbj0 cf1e2ma c1pjhlfy cljaryf c1t1j5f3 c1wcolv3 crts5jz ct14uu0 cumrtdq c1wr9adj ccyuvzi cre5s67 crcdtlb ci0n7rg">Explore
-              my work</a><span class="w-text-1">
-              and see how I can help<span class="w-text c1k0wzi6">
+              our work</a><span class="w-text-1">
+              and see how we can help<span class="w-text c1k0wzi6">
                 elevate your online presence.</span><br /><br /><span class="w-text cdgbz00">Ready to get
                 started?</span>
             </span>
           </div>
           <a href="/#contact"
             class="w-link cpbts2t c1xz90o3 c1li90jp c11kjtmf cy1nydl c1pggr7 ccw0luv crk8h2s c1ff3sbd c1g1wj8 cxze075 cfkvtxm c6wxre cnlpu6l c12dtkkz c2fkex4 c1quqltk csy8cb8 c1js0vls c1ymozjn c15ppwdl c3k70dx cqzs56e c5k2lyg c1ldk7nd ci5jx9b cnmsy6 ch1ppcl cnga94e c15r4q1i c1qistx5 c12b1kyj cyxpt4q cl8se6q c1go0x90 c1je1uax">Contact
-            me today!</a>
+            us today!</a>
         </div>
       </div>
     </div>
@@ -703,13 +721,14 @@
           Have a project in mind or need more information?
         </h1>
         <h1 class="w-heading cylt02x cmqtlay ce5l0l1 c6wxre c19uwbza c13vd4br c1wcolv3 ct14uu0 cumrtdq">
-          Fill out the form below, and I&#x27;ll get back to you as soon as
+          Fill out the form below, and we&#x27;ll get back to you as soon as
           possible. Let&#x27;s create something
           <span class="w-text c1k0wzi6">amazing together!</span>
         </h1>
       </div>
+
       <div class="w-box cfhwda7 c1qhqfas c1kylpxu">
-        <form state="initial" class="w-form cdbrjt6 cxxtn2o cabekta c1v754yw">
+        <form action="" method="post" state="initial" class="w-form cdbrjt6 cxxtn2o cabekta c1v754yw">
           <div class="w-box cdbrjt6 cabekta c1v754yw cxxtn2o cmlbxme c1e2t8lu">
             <div class="w-box cmlbxme cxd9ghl">
               <input placeholder="name" required=""
@@ -725,10 +744,10 @@
               <textarea placeholder="message" name="message"
                 class="w-text-area c1swgcny cy1nydl c1pggr7 ccw0luv crk8h2s cdfuaub c1y8osv7 c1n3z5u0 cb7prkk cm6jgge c1bmvxdh cmlbxme c1li90jp cmqtlay chg2uf2 c1s5rzwo c1q406iy c117vcti csl455m ccmnndv ci5jx9b c14c2xr0 cmg76fh c1oa6fvg chr9f5c c1pb337a c1voxtzt c7fwkib c93sz9b c12ystn4 cf56o25 cjf9v7b czaryot cl3mvaf c15p7vyx c1arh7c"></textarea>
             </div>
-            <button type="submit"
+            <input type="submit" name="submit"
               class="w-button cpbts2t c1xz90o3 csi3kvf c1rcu2z c103rlt6 c1u3zjep c1li90jp c11kjtmf cy1nydl c1pggr7 ccw0luv crk8h2s c1ff3sbd c11pp6bd cxze075 cfkvtxm c6wxre cnlpu6l c12dtkkz c2fkex4 c1quqltk csy8cb8 c1js0vls c1rwbnys c152qlvy c1ymozjn c15ppwdl c3k70dx cqzs56e c1ldk7nd ci5jx9b cnmsy6 ch1ppcl cnga94e c15r4q1i c1qistx5 c12b1kyj cyxpt4q cl8se6q c1go0x90 c1je1uax">
-              Send<br />
-            </button>
+            <br />
+            </input>
           </div>
         </form>
       </div>

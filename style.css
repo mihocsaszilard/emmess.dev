@@ -1,0 +1,117 @@
+@media (max-width: 767px) {
+
+ @keyframes bugfix {
+	 from {
+		 padding: 0;
+	}
+	 to {
+		 padding: 0;
+	}
+}
+ @-webkit-keyframes bugfix {
+	 from {
+		 padding: 0;
+	}
+	 to {
+		 padding: 0;
+	}
+}
+ #overlay-button {
+	 position: fixed;
+	 right: 8px;
+	 top: 8px;
+	 padding: 26px 11px;
+	 z-index: 99999;
+	 cursor: pointer;
+	 user-select: none;
+}
+ #overlay-button span {
+	 height: 4px;
+	 width: 35px;
+	 border-radius: 2px;
+	 background-color: white;
+	 position: relative;
+	 display: block;
+	 transition: all 0.2s ease-in-out;
+}
+ #overlay-button span:before {
+	 top: -10px;
+	 visibility: visible;
+}
+ #overlay-button span:after {
+	 top: 10px;
+}
+ #overlay-button span:before, #overlay-button span:after {
+	 height: 4px;
+	 width: 35px;
+	 border-radius: 2px;
+	 background-color: white;
+	 position: absolute;
+	 content: "";
+	 transition: all 0.2s ease-in-out;
+}
+ #overlay-button:hover span, #overlay-button:hover span:before, #overlay-button:hover span:after {
+	 background: #23b58e;
+}
+ input[type=checkbox] {
+	 display: none;
+}
+ input[type=checkbox]:checked ~ #overlay {
+	 visibility: visible;
+}
+ input[type=checkbox]:checked ~ #overlay-button:hover span, input[type=checkbox]:checked ~ #overlay-button span {
+	 background: transparent;
+}
+ input[type=checkbox]:checked ~ #overlay-button span:before {
+	 transform: rotate(45deg) translate(7px, 7px);
+	 opacity: 1;
+}
+ input[type=checkbox]:checked ~ #overlay-button span:after {
+	 transform: rotate(-45deg) translate(7px, -7px);
+}
+ #overlay {
+	 height: 100vh;
+	 width: 100vw;
+	 background: #071e21;
+	 z-index: 99998;
+	 visibility: hidden;
+	 position: fixed;
+     top:0;
+     left:0;
+}
+
+#overlay-content{
+    width:90vw;
+    height: 100%;
+	background: #0a2f31;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content:space-around;
+}
+
+ #overlay.active {
+	 visibility: visible;
+}
+ #overlay ul {
+	 display: flex;
+	 justify-content: center;
+	 align-items: center;
+	 flex-direction: column;
+	 text-align: center;
+	 padding-left: 0;
+     margin:0;
+	 list-style-type: none;
+}
+ #overlay ul a {
+	 color: white;
+	 text-decoration: none;
+	 font-size: 1.5em;
+     margin: 8px;
+}
+
+ #overlay ul a:hover {
+	 color: #23b58e;
+}
+}

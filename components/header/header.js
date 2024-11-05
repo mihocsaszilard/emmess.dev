@@ -1,36 +1,37 @@
 class Header extends HTMLElement {
-    constructor() {
-        super();
+  constructor() {
+    super();
+  }
+
+
+  async connectedCallback() {
+
+    const logoUrl = 'https://api.github.com/repos/mihocsaszilard/emmess.dev/git/blobs/3b2e97d511692a6aa2ba028506bf3a16f9ab6fd9'
+    const emmessUrl = 'https://api.github.com/repos/mihocsaszilard/emmess.dev/git/blobs/50d21627a2c79f6646fd5410498ecd60b7383cee'
+    const logo = await fetch(logoUrl).then(res => res.json());
+    const emmess = await fetch(emmessUrl).then(res => res.json());
+
+    // When the user scrolls down 50px from the top of the document, resize the header's font size
+    window.onscroll = function () {
+      scrollFunction();
+    };
+
+    function scrollFunction() {
+      if (
+        document.body.scrollTop > 60 ||
+        document.documentElement.scrollTop > 60
+      ) {
+        document.getElementById("header").style.height = "40px";
+        document.getElementById("call-to-action").style.height = "40px";
+        document.getElementById("call-to-action").style.right = 0;
+      } else {
+        document.getElementById("header").style.height = "60px";
+        document.getElementById("call-to-action").style.height = "60px";
+        document.getElementById("call-to-action").style.right = "-60px";
+      }
     }
 
-    connectedCallback() {
-
-        const xxx = document.getElementsByTagName('header-component')
-
-        console.log(xxx)
-        console.log(xxx.baseURI)
-
-        // When the user scrolls down 50px from the top of the document, resize the header's font size
-        window.onscroll = function () {
-            scrollFunction();
-        };
-
-        function scrollFunction() {
-            if (
-                document.body.scrollTop > 60 ||
-                document.documentElement.scrollTop > 60
-            ) {
-                document.getElementById("header").style.height = "40px";
-                document.getElementById("call-to-action").style.height = "40px";
-                document.getElementById("call-to-action").style.right = 0;
-            } else {
-                document.getElementById("header").style.height = "60px";
-                document.getElementById("call-to-action").style.height = "60px";
-                document.getElementById("call-to-action").style.right = "-60px";
-            }
-        }
-
-        this.innerHTML = `
+    this.innerHTML = `
 
         <style>
         #header {
@@ -39,31 +40,20 @@ class Header extends HTMLElement {
             left: 0;
             width: 100%;
         }
+
+        #home-logo-link {
+          display: flex;
+          align-items: center;
+        }
         </style>
 
     <div id="header"
     class="w-box cdbrjt6 c1ezjr48 c1rw68fh cabekta cagrwr0 cmlbxme cwiaclc c1wf35m5 c36v29b c1mqtedc c58z5p6 cd8kon4 cggid8d c2fkex4 c1quqltk csy8cb8 c1js0vls csqrka1 c1rgiuj9 c1d3glnc cub492t c1cxyv9c ckq0nxn c17eg0m2 c11x0o56">
     <div class="w-box c19q49ft ckq0nxn">
-      <a href="/#home" class="w-link cdbrjt6 c1m82nho c1r15jgl c19q49ft"><img alt="" width="64" height="64"
-          src="./assets/111.1-Client-file-Light-Icon-PNG_fIGR7tZKxprWPXMnrFW9O.png"
-          class="w-image csxcpnh ck5ncoe ckztlgk cvlod9e c13ofar8 cfhwda7" sizes="100vw" srcset="
-              ./assets/111.1-Client-file-Light-Icon-PNG_fIGR7tZKxprWPXMnrFW9O.png  16w,
-              ./assets/111.1-Client-file-Light-Icon-PNG_fIGR7tZKxprWPXMnrFW9O.png  32w,
-              ./assets/111.1-Client-file-Light-Icon-PNG_fIGR7tZKxprWPXMnrFW9O.png  48w,
-              ./assets/111.1-Client-file-Light-Icon-PNG_fIGR7tZKxprWPXMnrFW9O.png  64w,
-              ./assets/111.1-Client-file-Light-Icon-PNG_fIGR7tZKxprWPXMnrFW9O.png  96w,
-              ./assets/111.1-Client-file-Light-Icon-PNG_fIGR7tZKxprWPXMnrFW9O.png 128w
-            " decoding="async" loading="eager" /><img alt="" width="120" height="120"
-          src="./assets/emmess-light_oHwsf40lX98aVXt3c0w05.png" class="w-image c1m82nho c1r15jgl c10xfzxy" sizes="100vw"
-          srcset="
-              ./assets/emmess-light_oHwsf40lX98aVXt3c0w05.png  16w,
-              ./assets/emmess-light_oHwsf40lX98aVXt3c0w05.png  32w,
-              ./assets/emmess-light_oHwsf40lX98aVXt3c0w05.png  48w,
-              ./assets/emmess-light_oHwsf40lX98aVXt3c0w05.png  64w,
-              ./assets/emmess-light_oHwsf40lX98aVXt3c0w05.png  96w,
-              ./assets/emmess-light_oHwsf40lX98aVXt3c0w05.png 128w,
-              ./assets/emmess-light_oHwsf40lX98aVXt3c0w05.png 256w
-            " decoding="async" loading="eager" /></a>
+      <a href="/#home" id="home-logo-link" class="w-link cdbrjt6 c1m82nho c1r15jgl c19q49ft">
+      <img style="width:64px" src="data:image/png;base64, ${logo.content}"/>
+      <img style="width:120px" height="40px" src="data:image/png;base64, ${emmess.content}"/>
+     </a>
     </div>
     <div id=""
       class="w-box cdbrjt6 cabekta c1v754yw c1aw2b96 c1ddd406 cylt02x c1xpbjtc c1s9uvgq c1jz0n5m cd6f459 cci31kk c2clyrt c1kylpxu">
@@ -126,7 +116,7 @@ class Header extends HTMLElement {
     </div>
   </div>
     `
-    }
+  }
 }
 
 customElements.define('header-component', Header);

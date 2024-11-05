@@ -6,7 +6,7 @@ class Header extends HTMLElement {
 
   async connectedCallback() {
 
-    const logoUrl = 'https://api.github.com/repos/mihocsaszilard/emmess.dev/git/blobs/3b2e97d511692a6aa2ba028506bf3a16f9ab6fd9'
+    const logoUrl = 'assets/111.1-Client-file-Light-Icon-PNG_fIGR7tZKxprWPXMnrFW9O.png'
     const emmessUrl = 'https://api.github.com/repos/mihocsaszilard/emmess.dev/git/blobs/50d21627a2c79f6646fd5410498ecd60b7383cee'
     const logo = await fetch(logoUrl).then(res => res.json());
     const emmess = await fetch(emmessUrl).then(res => res.json());

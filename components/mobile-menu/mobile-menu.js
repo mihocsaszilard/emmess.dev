@@ -8,7 +8,16 @@ class MobileMenu extends HTMLElement {
         const logo = await fetch(logoUrl).then(res => res.json());
 
         this.innerHTML = `
-        <section>
+
+        <style>
+            #mobile-menu {
+                @media (min-width: 767px) {
+                    display: none;
+                }
+            }
+        </style>
+
+        <section id="mobile-menu">
             <input type="checkbox" id="overlay-input" />
             <label for="overlay-input" id="overlay-button"><span></span></label>
             <div id="overlay">

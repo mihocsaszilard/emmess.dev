@@ -6,7 +6,7 @@ class Header extends HTMLElement {
 
   async connectedCallback() {
 
-    const logoUrl = 'assets/111.1-Client-file-Light-Icon-PNG_fIGR7tZKxprWPXMnrFW9O.png'
+    const logoUrl = 'https://api.github.com/repos/mihocsaszilard/emmess.dev/git/blobs/3b2e97d511692a6aa2ba028506bf3a16f9ab6fd9'
     const emmessUrl = 'https://api.github.com/repos/mihocsaszilard/emmess.dev/git/blobs/50d21627a2c79f6646fd5410498ecd60b7383cee'
     const logo = await fetch(logoUrl).then(res => res.json());
     const emmess = await fetch(emmessUrl).then(res => res.json());
@@ -51,8 +51,8 @@ class Header extends HTMLElement {
     class="w-box cdbrjt6 c1ezjr48 c1rw68fh cabekta cagrwr0 cmlbxme cwiaclc c1wf35m5 c36v29b c1mqtedc c58z5p6 cd8kon4 cggid8d c2fkex4 c1quqltk csy8cb8 c1js0vls csqrka1 c1rgiuj9 c1d3glnc cub492t c1cxyv9c ckq0nxn c17eg0m2 c11x0o56">
     <div class="w-box c19q49ft ckq0nxn">
       <a href="/#home" id="home-logo-link" class="w-link cdbrjt6 c1m82nho c1r15jgl c19q49ft">
-      <img style="width:64px" src="data:image/png;base64, ${logo.content}"/>
-      <img style="width:120px" height="40px" src="data:image/png;base64, ${emmess.content}"/>
+     <!-- <img style="width:64px" src="data:image/png;base64, ${"logo.content"}"/>
+      <img style="width:120px" height="40px" src="data:image/png;base64, ${emmess.content}"/> -->
      </a>
     </div>
     <div id=""

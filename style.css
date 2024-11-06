@@ -1,16 +1,20 @@
+body {
+	margin: 0;
+}
+
 #hero-image {
-    padding: 64px;
-    aspect-ratio: 1;
-    display:flex;
-    align-items:center;
-    justify-content: center;
+	padding: 64px;
+	aspect-ratio: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 @media (max-width: 767px) {
 
-#hero-image {
-    width:50%;
-    padding: 16px;
-    justify-content: center;
+	#hero-image {
+		width: 50%;
+		padding: 16px;
+		justify-content: center;
 	}
 }

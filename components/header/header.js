@@ -3,12 +3,33 @@ class Header extends HTMLElement {
     super();
   }
 
+
   connectedCallback() {
+    const baseUrl = 'https://emmess.dev';
 
     // When the user scrolls down 50px from the top of the document, resize the header's font size
     window.onscroll = function () {
       scrollFunction();
     };
+
+    window.addEventListener('load', () => {
+      const menuItems = document.getElementById('menu-items');
+
+      Array.from(menuItems.children).forEach(menuItem => {
+        menuItem.addEventListener('click', () => {
+          const subDir = menuItem.getAttribute('navigate-to');
+          subDir.indexOf('#') === 1 ? window.location = `${baseUrl + subDir}` : animateNavigation(subDir);
+        })
+      })
+    })
+
+    function animateNavigation(subDir) {
+      // add animation
+      document.getElementById("load").classList.add('load-overlay-active')
+      setTimeout(() => {
+        window.location = `${baseUrl + subDir}`;
+      }, 2000);
+    }
 
     function scrollFunction() {
       if (
@@ -27,19 +48,84 @@ class Header extends HTMLElement {
 
     this.innerHTML = `
 
-        <style>
-        #header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
+    <style>
+      #header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 99999999;
+      }
+
+      #home-logo-link {
+        display: flex;
+        align-items: center;
+      }
+
+      .load-overlay-active {
+        opacity: 1 !important;
+      }
+
+      #load {
+        opacity:0;
+        position: fixed;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        top:0;
+        left: 0;
+        width:100vw;
+        height: 100vh;
+        z-index:999;
+        background: #071e21;
+        transition: opacity 1s ease 0s;
+      }
+
+      div#wave {
+        position:relative;
+        text-align:center;
+        width:100px;
+        height:100px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+          
+      #wave>.dot {
+        display:inline-block;
+        width:12px;
+        height:12px;
+        border-radius:50%;
+        margin-right:3px;
+        background:#23B58E;
+        animation: wave 0.5s linear infinite;
+      }
+      
+      #wave>.dot:nth-child(2) {
+        animation-delay: 0.125s;
+      }
+
+      #wave>.dot:nth-child(3) {
+        animation-delay: 0.25s;
+      }
+
+      @keyframes wave {
+        0%, 60%, 100% {
+          transform: initial;
         }
 
-        #home-logo-link {
-          display: flex;
-          align-items: center;
+        30% {
+          transform: translateY(-15px);
         }
-        </style>
+      }
+    </style>
+
+    <div id="load">
+      <div id="wave">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
 
     <div id="header"
     class="w-box cdbrjt6 c1ezjr48 c1rw68fh cabekta cagrwr0 cmlbxme cwiaclc c1wf35m5 c36v29b c1mqtedc c58z5p6 cd8kon4 cggid8d c2fkex4 c1quqltk csy8cb8 c1js0vls csqrka1 c1rgiuj9 c1d3glnc cub492t c1cxyv9c ckq0nxn c17eg0m2 c11x0o56">
@@ -72,15 +158,15 @@ class Header extends HTMLElement {
 
      </a>
     </div>
-    <div id=""
+    <div id="menu-items"
       class="w-box cdbrjt6 cabekta c1v754yw c1aw2b96 c1ddd406 cylt02x c1xpbjtc c1s9uvgq c1jz0n5m cd6f459 cci31kk c2clyrt c1kylpxu">
-      <a href="/#home"
+      <a navigate-to="/#home"
         class="w-link cy7ulgk csy8cb8 c2fkex4 c1quqltk cmqtlay cxze075 c1t1j5f3 c1wcolv3 cylt02x crts5jz c1xpbjtc cdbrjt6 cabekta c1v754yw c12a08fm cwffqi5 c1n175p1 c1271w8q cugyjby c1tdrey9 cx86fyv c7g36ny cgfdz9b cwn85cu">home</a>
-      <a href="/about"
+      <a navigate-to="/about"
         class="w-link cy7ulgk csy8cb8 c2fkex4 c1quqltk cmqtlay cxze075 c1t1j5f3 c1wcolv3 cylt02x crts5jz c1xpbjtc cdbrjt6 cabekta c1v754yw c12a08fm cwffqi5 c1n175p1 c1271w8q cugyjby c1tdrey9 cx86fyv c7g36ny cgfdz9b cwn85cu">about</a>
-      <a href="/projects#top"
+      <a navigate-to="/projects#top"
         class="w-link cy7ulgk csy8cb8 c2fkex4 c1quqltk cmqtlay cxze075 c1t1j5f3 c1wcolv3 cylt02x crts5jz c1xpbjtc cdbrjt6 cabekta c1v754yw c12a08fm cwffqi5 c1n175p1 c1271w8q cugyjby c1tdrey9 cx86fyv c7g36ny cgfdz9b cwn85cu">portfolio</a>
-      <a href="/#contact"
+      <a navigate-to="/#contact"
         class="w-link cy7ulgk csy8cb8 c2fkex4 c1quqltk cmqtlay cxze075 c1t1j5f3 c1wcolv3 cylt02x crts5jz c1xpbjtc cdbrjt6 cabekta c1v754yw c12a08fm cwffqi5 c1n175p1 c1271w8q cugyjby c1tdrey9 cx86fyv c7g36ny cgfdz9b cwn85cu">contact</a>
     </div>
     <div class="w-box cdbrjt6 cabekta c1v754yw c1aw2b96 c1ddd406 c19q49ft ckq0nxn">

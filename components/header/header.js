@@ -43,7 +43,7 @@ class Header extends HTMLElement {
 
     <div id="header"
     class="w-box cdbrjt6 c1ezjr48 c1rw68fh cabekta cagrwr0 cmlbxme cwiaclc c1wf35m5 c36v29b c1mqtedc c58z5p6 cd8kon4 cggid8d c2fkex4 c1quqltk csy8cb8 c1js0vls csqrka1 c1rgiuj9 c1d3glnc cub492t c1cxyv9c ckq0nxn c17eg0m2 c11x0o56">
-    <div class="w-box ckq0nxn">
+    <div class="w-box cdbrjt6 c1v754yw c19q49ft ckq0nxn">
       <a href="/#home" id="home-logo-link" class="w-link cdbrjt6 c1m82nho c1r15jgl">
       
       <!-- emmess logo -->

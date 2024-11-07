@@ -68,6 +68,8 @@ class Header extends HTMLElement {
 
       .load-overlay-active {
         opacity: 1 !important;
+        height: 100vh !important;
+        width: 100vw !important;
       }
 
       #load {
@@ -78,8 +80,8 @@ class Header extends HTMLElement {
         align-items:center;
         top:0;
         left: 0;
-        width:100vw;
-        height: 100vh;
+        width: 0px;
+        height: 0px;
         z-index:999;
         background: #071e21;
         transition: opacity 0.5s ease 0s;

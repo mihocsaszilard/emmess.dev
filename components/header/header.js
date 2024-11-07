@@ -32,7 +32,7 @@ class Header extends HTMLElement {
       document.getElementById("wave").style.display = 'block';
       setTimeout(() => {
         window.location = `${baseUrl + subDir}`;
-      }, 2000);
+      }, 1000);
     }
 
     function scrollFunction() {
@@ -165,7 +165,7 @@ class Header extends HTMLElement {
     </div>
     <div id="menu-items"
       class="w-box cdbrjt6 cabekta c1v754yw c1aw2b96 c1ddd406 cylt02x c1xpbjtc c1s9uvgq c1jz0n5m cd6f459 cci31kk c2clyrt c1kylpxu">
-      <a navigate-to="/#home"
+      <a navigate-to="/"
         class="w-link cy7ulgk csy8cb8 c2fkex4 c1quqltk cmqtlay cxze075 c1t1j5f3 c1wcolv3 cylt02x crts5jz c1xpbjtc cdbrjt6 cabekta c1v754yw c12a08fm cwffqi5 c1n175p1 c1271w8q cugyjby c1tdrey9 cx86fyv c7g36ny cgfdz9b cwn85cu">home</a>
       <a navigate-to="/about"
         class="w-link cy7ulgk csy8cb8 c2fkex4 c1quqltk cmqtlay cxze075 c1t1j5f3 c1wcolv3 cylt02x crts5jz c1xpbjtc cdbrjt6 cabekta c1v754yw c12a08fm cwffqi5 c1n175p1 c1271w8q cugyjby c1tdrey9 cx86fyv c7g36ny cgfdz9b cwn85cu">about</a>

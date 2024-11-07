@@ -17,7 +17,7 @@ class Header extends HTMLElement {
       document.getElementById("load").classList.remove('load-overlay-active')
       document.getElementById("wave").style.display = 'none';
       setTimeout(() => {
-        document.getElementById("load").style.display = 'none'
+        document.getElementById("load").style.height = '0px'
       }, 600);
 
       const menuItems = document.getElementById('menu-items');
@@ -71,7 +71,7 @@ class Header extends HTMLElement {
 
       .load-overlay-active {
         opacity: 1 !important;
-        display: flex !important;
+        height: 100vh;
       }
 
       #load {

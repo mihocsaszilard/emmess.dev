@@ -13,6 +13,10 @@ class Header extends HTMLElement {
     };
 
     window.addEventListener('load', () => {
+
+      document.getElementById("load").classList.remove('load-overlay-active')
+      document.getElementById("wave").style.display = 'none';
+
       const menuItems = document.getElementById('menu-items');
 
       Array.from(menuItems.children).forEach(menuItem => {
@@ -24,8 +28,8 @@ class Header extends HTMLElement {
     })
 
     function animateNavigation(subDir) {
-      // add animation
       document.getElementById("load").classList.add('load-overlay-active')
+      document.getElementById("wave").style.display = 'block';
       setTimeout(() => {
         window.location = `${baseUrl + subDir}`;
       }, 2000);
@@ -78,10 +82,11 @@ class Header extends HTMLElement {
         height: 100vh;
         z-index:999;
         background: #071e21;
-        transition: opacity 1s ease 0s;
+        transition: opacity 0.5s ease 0s;
       }
 
       div#wave {
+        display: none;
         position:relative;
         text-align:center;
         width:100px;
@@ -119,7 +124,7 @@ class Header extends HTMLElement {
       }
     </style>
 
-    <div id="load">
+    <div id="load" class="load-overlay-active">
       <div id="wave">
         <span class="dot"></span>
         <span class="dot"></span>

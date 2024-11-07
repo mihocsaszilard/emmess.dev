@@ -71,6 +71,7 @@ class Header extends HTMLElement {
 
       .load-overlay-active {
         opacity: 1 !important;
+        display: flex !important;
       }
 
       #load {

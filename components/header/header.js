@@ -25,6 +25,8 @@ class Header extends HTMLElement {
       Array.from(menuItems.children).forEach(menuItem => {
         menuItem.addEventListener('click', () => {
           const subDir = menuItem.getAttribute('navigate-to');
+          console.log(window.location, baseUrl + subDir);
+
           if (window.location !== baseUrl + subDir)
             subDir.indexOf('#') === 1 ? window.location = `${baseUrl + subDir}` : animateNavigation(subDir);
         })

@@ -7,6 +7,10 @@ class ContactForm extends HTMLElement {
         this.innerHTML = `
         
         <style>
+            form {
+                font-family: Intelo, Roboto, sans-serif;
+            }
+            
             #contact-form {
                 width: 100%;
             }        

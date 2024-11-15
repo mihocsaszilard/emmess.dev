@@ -1,18 +1,32 @@
 @font-face {
-    font-family: Instrument Sans;
-    font-style: normal;
-    font-weight: 400 700;
-    font-display: swap;
-    format("truetype");
+    font-family: "Intelo";
+    src: url('../font/intelo-alt-light.ttf') format("woff2");
+}
+
+@font-face {
+    font-family: "Intelo-Medium";
+    src: url('../font/intelo-alt-medium.ttf') format("woff2");
+}
+
+@font-face {
+    font-family: "Intelo-Bold";
+    src: url('../font/intelo-bold.ttf') format("woff2");
 }
 
 @media all {
     :root {
         display: grid;
         min-height: 100%;
-        font-family: Arial, Roboto, sans-serif;
+        font-family: Intelo, Roboto, sans-serif;
         font-size: 16px;
         line-height: 1.2
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-family: Intelo-Bold, Roboto, sans-serif;
     }
 
     s :where(body.w-body) {
@@ -1256,7 +1270,7 @@
     }
 
     .cylt02x {
-        font-family: Instrument Sans, sans-serif
+        font-family: Intelo, Roboto, sans-serif;
     }
 
     .c1rwd89h {

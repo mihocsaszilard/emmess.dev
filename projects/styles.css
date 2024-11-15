@@ -145,14 +145,15 @@
 
 @media all and (max-width: 479px) {
     #main-container {
+        grid-template-columns: 1fr;
         grid-template-areas:
-            "a a"
-            "b b"
-            "c c"
-            "d d"
-            "e e"
-            "f f"
-            "g g"
+            "a"
+            "b"
+            "c"
+            "d"
+            "e"
+            "f"
+            "g"
         ;
         gap: 32px;
     }

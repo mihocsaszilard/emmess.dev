@@ -5,7 +5,7 @@ class Header extends HTMLElement {
 
 
   connectedCallback() {
-    const baseUrl = 'https://emmess.dev';
+    const baseUrl = 'https://v1.emmess.dev';
 
     // When the user scrolls down 50px from the top of the document, resize the header's font size
     window.onscroll = function () {

@@ -22,7 +22,7 @@ class ContactForm extends HTMLElement {
             <input type="hidden" name="apikey" value="9e981141-7fb1-404d-83c1-4ccedaec52b1">
             <input type="hidden" name="subject" value="New Submission from home page">
             <input type="hidden" name="from_name" value="emmess.dev">
-            <input type="hidden" name="redirect" value="https://www.emmess.dev">
+            <input type="hidden" name="redirect" value="https://www.v1.emmess.dev">
 
             <div class="w-box cdbrjt6 cabekta c1v754yw cxxtn2o cmlbxme c1e2t8lu">
                 <div class="w-box cmlbxme cxd9ghl">

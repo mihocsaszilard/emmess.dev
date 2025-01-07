@@ -108,7 +108,7 @@ class Footer extends HTMLElement {
         Mihocsa Szilard -
       </div>
       <a class="w-link cy7ulgk csy8cb8 c2fkex4 c1quqltk canbhi8 c1uafbj0 cf1e2ma c1pjhlfy cmqtlay cxze075 c1ortxbx c5a3zvw cylt02x crts5jz ctmpnxb c6wxre cugyjby ccyuvzi cre5s67 crcdtlb ci0n7rg"
-        href="https://www.emmess.dev">emmess</a>
+        href="https://www.v1.emmess.dev">emmess</a>
     </div>
     <div class="w-box ckq0nxn c1xpbjtc cdbrjt6 cabekta c1v754yw">
       <nav aria-label="Main" data-orientation="horizontal" dir="ltr"
